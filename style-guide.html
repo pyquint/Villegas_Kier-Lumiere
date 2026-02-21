@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumière — Style Guide</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --clr-bg: #0e0e12;
+      --clr-surface: #16161d;
+      --clr-surface-hover: #1e1e28;
+      --clr-accent: #c9a96e;
+      --clr-accent-light: #dfc291;
+      --clr-text: #e8e4dc;
+      --clr-text-muted: #8a8680;
+      --clr-border: rgba(201, 169, 110, .15);
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--clr-bg);
+      color: var(--clr-text);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    /* ─── Guide Layout ─── */
+    .guide-header {
+      border-bottom: 1px solid var(--clr-border);
+      padding: 3rem 0;
+    }
+
+    .guide-header h1 {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      font-weight: 700;
+    }
+
+    .guide-header h1 em {
+      color: var(--clr-accent);
+      font-style: italic;
+    }
+
+    .guide-header p {
+      color: var(--clr-text-muted);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin-top: .5rem;
+    }
+
+    .guide-meta {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1.4rem;
+      flex-wrap: wrap;
+    }
+
+    .guide-meta span {
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--clr-text-muted);
+    }
+
+    .guide-meta span strong {
+      color: var(--clr-text);
+      font-weight: 600;
+    }
+
+    .guide-section {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--clr-border);
+    }
+
+    .guide-section:last-child {
+      border-bottom: none;
+    }
+
+    .section-number {
+      font-family: var(--font-display);
+      font-size: .85rem;
+      color: var(--clr-accent);
+      letter-spacing: .15em;
+      margin-bottom: .5rem;
+      display: block;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: .4rem;
+    }
+
+    .section-desc {
+      color: var(--clr-text-muted);
+      font-size: .95rem;
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+    }
+
+    .subkicker {
+      font-size: .72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: var(--clr-text-muted);
+      margin-bottom: .8rem;
+    }
+
+    /* ─── Color Swatches ─── */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .swatch {
+      border: 1px solid var(--clr-border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .swatch-color {
+      height: 100px;
+      display: flex;
+      align-items: flex-end;
+      padding: .6rem .8rem;
+    }
+
+    .swatch-info {
+      background: var(--clr-surface);
+      padding: .75rem .8rem;
+    }
+
+    .swatch-name {
+      font-weight: 600;
+      font-size: .85rem;
+      margin-bottom: .15rem;
+    }
+
+    .swatch-value {
+      font-size: .75rem;
+      color: var(--clr-text-muted);
+      font-family: 'DM Sans', monospace;
+    }
+
+    .swatch-var {
+      font-size: .7rem;
+      color: var(--clr-accent);
+      margin-top: .2rem;
+      font-family: monospace;
+    }
+
+    /* ─── Typography Specimens ─── */
+    .type-specimen {
+      border: 1px solid var(--clr-border);
+      border-radius: 4px;
+      padding: 2rem 2.2rem;
+      margin-bottom: 1rem;
+      background: var(--clr-surface);
+    }
+
+    .type-specimen .sample {
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .type-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--clr-border);
+    }
+
+    .type-meta {
+      font-size: .72rem;
+      color: var(--clr-text-muted);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    .type-meta strong {
+      color: var(--clr-text);
+      font-weight: 600;
+    }
+
+    .type-scale-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .type-scale-table th {
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      color: var(--clr-text-muted);
+      font-weight: 600;
+      text-align: left;
+      padding: .6rem 1rem;
+      border-bottom: 1px solid var(--clr-border);
+    }
+
+    .type-scale-table td {
+      padding: .85rem 1rem;
+      border-bottom: 1px solid rgba(201, 169, 110, .07);
+      vertical-align: middle;
+    }
+
+    .type-scale-table .preview {
+      min-width: 260px;
+    }
+
+    .type-scale-table code {
+      font-size: .72rem;
+      color: var(--clr-accent);
+      background: rgba(201, 169, 110, .08);
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    /* ─── Spacing ─── */
+    .spacing-row {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: .85rem;
+    }
+
+    .spacing-block {
+      background: rgba(201, 169, 110, .15);
+      border: 1px solid var(--clr-accent);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .spacing-label {
+      font-size: .82rem;
+      font-weight: 600;
+    }
+
+    .spacing-value {
+      font-size: .72rem;
+      color: var(--clr-text-muted);
+      font-family: monospace;
+    }
+
+    /* ─── Component Previews ─── */
+    .component-card {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: 4px;
+      padding: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .component-label {
+      font-size: .7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: var(--clr-accent);
+      margin-bottom: 1.2rem;
+      padding-bottom: .6rem;
+      border-bottom: 1px solid var(--clr-border);
+    }
+
+    /* Live button previews */
+    .btn-primary-custom {
+      background: var(--clr-accent);
+      color: var(--clr-bg);
+      font-weight: 600;
+      font-size: .85rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      border: none;
+      padding: .8rem 2.2rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all .3s;
+      font-family: var(--font-body);
+    }
+
+    .btn-primary-custom:hover {
+      background: var(--clr-accent-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201, 169, 110, .2);
+    }
+
+    .btn-outline-custom {
+      background: transparent;
+      color: var(--clr-text);
+      font-weight: 500;
+      font-size: .85rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      border: 1px solid var(--clr-border);
+      padding: .8rem 2.2rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all .3s;
+      font-family: var(--font-body);
+    }
+
+    .btn-outline-custom:hover {
+      border-color: var(--clr-accent);
+      color: var(--clr-accent);
+    }
+
+    .btn-nav-custom {
+      background: var(--clr-accent);
+      color: var(--clr-bg);
+      font-weight: 600;
+      font-size: .78rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      border: none;
+      padding: .5rem 1.4rem;
+      border-radius: 2px;
+      cursor: pointer;
+      font-family: var(--font-body);
+    }
+
+    /* Live card previews */
+    .preview-feature-card {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: 4px;
+      padding: 2rem 1.8rem;
+      transition: border-color .3s, transform .3s;
+      max-width: 320px;
+    }
+
+    .preview-feature-card:hover {
+      border-color: var(--clr-accent);
+      transform: translateY(-4px);
+    }
+
+    .preview-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(201, 169, 110, .08);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--clr-accent);
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .preview-feature-card h5 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      margin-bottom: .5rem;
+    }
+
+    .preview-feature-card p {
+      color: var(--clr-text-muted);
+      font-size: .88rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Testimonial preview */
+    .preview-testimonial {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: 4px;
+      padding: 2rem 1.8rem;
+      max-width: 340px;
+    }
+
+    .preview-testimonial .stars {
+      color: var(--clr-accent);
+      font-size: .85rem;
+      margin-bottom: .8rem;
+    }
+
+    .preview-testimonial blockquote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+      border: none;
+      padding: 0;
+    }
+
+    .preview-avatar {
+      width: 38px;
+      height: 38px;
+      background: rgba(201, 169, 110, .12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--clr-accent);
+      font-weight: 700;
+      font-size: .8rem;
+      flex-shrink: 0;
+    }
+
+    /* Nav link preview */
+    .nav-link-preview {
+      color: var(--clr-text-muted);
+      font-weight: 500;
+      font-size: .85rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: .4rem .8rem;
+      transition: color .25s;
+      font-family: var(--font-body);
+    }
+
+    .nav-link-preview:hover {
+      color: var(--clr-accent);
+    }
+
+    .nav-link-preview.active {
+      color: var(--clr-accent);
+    }
+
+    /* ─── Grid demo ─── */
+    .grid-demo-col {
+      background: rgba(201, 169, 110, .06);
+      border: 1px dashed rgba(201, 169, 110, .25);
+      border-radius: 3px;
+      text-align: center;
+      padding: .7rem .5rem;
+      font-size: .75rem;
+      color: var(--clr-text-muted);
+    }
+
+    /* ─── Icon Grid ─── */
+    .icon-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .icon-tile {
+      width: 72px;
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: 4px;
+      padding: .8rem;
+      text-align: center;
+    }
+
+    .icon-tile i {
+      font-size: 1.3rem;
+      color: var(--clr-accent);
+      display: block;
+      margin-bottom: .35rem;
+    }
+
+    .icon-tile span {
+      font-size: .6rem;
+      color: var(--clr-text-muted);
+    }
+
+    /* ─── Do / Don't ─── */
+    .do-dont {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 767px) {
+      .do-dont {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .do-box,
+    .dont-box {
+      border-radius: 4px;
+      padding: 1.5rem;
+    }
+
+    .do-box {
+      background: rgba(74, 222, 128, .04);
+      border: 1px solid rgba(74, 222, 128, .2);
+    }
+
+    .dont-box {
+      background: rgba(248, 113, 113, .04);
+      border: 1px solid rgba(248, 113, 113, .2);
+    }
+
+    .do-box .tag,
+    .dont-box .tag {
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      margin-bottom: .8rem;
+    }
+
+    .do-box .tag {
+      color: #4ade80;
+    }
+
+    .dont-box .tag {
+      color: #f87171;
+    }
+
+    .do-box p,
+    .dont-box p {
+      font-size: .88rem;
+      color: var(--clr-text-muted);
+      margin: 0 0 .4rem;
+      line-height: 1.55;
+    }
+
+    /* Responsive */
+    @media (max-width: 767px) {
+      .swatch-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .guide-header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container" style="max-width: 960px;">
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- HEADER                                  -->
+    <!-- ═══════════════════════════════════════ -->
+    <header class="guide-header">
+      <h1>Lumière <em>Style Guide</em></h1>
+      <p>A comprehensive visual reference for building and extending the Lumière landing page. Covers color, typography,
+        spacing, components, and layout.</p>
+      <div class="guide-meta">
+        <span>Version <strong>1.0</strong></span>
+        <span>Updated <strong>Feb 2026</strong></span>
+        <span>Framework <strong>Bootstrap 5.3</strong></span>
+        <span>Theme <strong>Dark Luxury</strong></span>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- 01 — COLOR PALETTE                     -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="guide-section">
+      <span class="section-number">01</span>
+      <h2 class="section-title">Color Palette</h2>
+      <p class="section-desc">A warm, high-contrast dark theme anchored by deep charcoal backgrounds and gold accent
+        tones. Muted neutrals keep text comfortable for long reading.</p>
+
+      <p class="subkicker">Core Colors</p>
+      <div class="swatch-grid" style="margin-bottom: 2rem;">
+        <div class="swatch">
+          <div class="swatch-color" style="background:#0e0e12;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Background</div>
+            <div class="swatch-value">#0E0E12</div>
+            <div class="swatch-var">--clr-bg</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#16161d;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Surface</div>
+            <div class="swatch-value">#16161D</div>
+            <div class="swatch-var">--clr-surface</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#1e1e28;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Surface Hover</div>
+            <div class="swatch-value">#1E1E28</div>
+            <div class="swatch-var">--clr-surface-hover</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#c9a96e;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Accent (Gold)</div>
+            <div class="swatch-value">#C9A96E</div>
+            <div class="swatch-var">--clr-accent</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#dfc291;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Accent Light</div>
+            <div class="swatch-value">#DFC291</div>
+            <div class="swatch-var">--clr-accent-light</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="subkicker">Text & Border</p>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch-color" style="background:#e8e4dc;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Primary Text</div>
+            <div class="swatch-value">#E8E4DC</div>
+            <div class="swatch-var">--clr-text</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#8a8680;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Muted Text</div>
+            <div class="swatch-value">#8A8680</div>
+            <div class="swatch-var">--clr-text-muted</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:rgba(201,169,110,.15); border:1px dashed rgba(201,169,110,.4);">
+          </div>
+          <div class="swatch-info">
+            <div class="swatch-name">Border</div>
+            <div class="swatch-value">rgba(201,169,110,.15)</div>
+            <div class="swatch-var">--clr-border</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#4ade80;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Status Green</div>
+            <div class="swatch-value">#4ADE80</div>
+            <div class="swatch-var">Utility only</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- 02 — TYPOGRAPHY                        -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="guide-section">
+      <span class="section-number">02</span>
+      <h2 class="section-title">Typography</h2>
+      <p class="section-desc">Two-font pairing: a classic serif display face for headings and a clean geometric sans for
+        body. Both loaded from Google Fonts.</p>
+
+      <p class="subkicker">Display — Playfair Display</p>
+      <div class="type-specimen">
+        <div class="sample" style="font-family:var(--font-display); font-size:2.8rem; font-weight:700;">
+          Design that <em style="color:var(--clr-accent);">speaks</em>
+        </div>
+        <div class="type-meta-row">
+          <div class="type-meta">Family <strong>Playfair Display</strong></div>
+          <div class="type-meta">Weights <strong>400, 700</strong></div>
+          <div class="type-meta">Style <strong>Normal, Italic</strong></div>
+          <div class="type-meta">Fallback <strong>Georgia, serif</strong></div>
+        </div>
+      </div>
+
+      <p class="subkicker" style="margin-top:2rem;">Body — DM Sans</p>
+      <div class="type-specimen">
+        <div class="sample"
+          style="font-family:var(--font-body); font-size:1.05rem; font-weight:400; color:var(--clr-text-muted); line-height:1.7; max-width:480px;">
+          We craft immersive brand experiences, striking interfaces, and visual identities that leave a lasting
+          impression on every audience.
+        </div>
+        <div class="type-meta-row">
+          <div class="type-meta">Family <strong>DM Sans</strong></div>
+          <div class="type-meta">Weights <strong>300, 400, 500, 600</strong></div>
+          <div class="type-meta">Fallback <strong>sans-serif</strong></div>
+        </div>
+      </div>
+
+      <p class="subkicker" style="margin-top:2rem;">Type Scale</p>
+      <div style="overflow-x:auto;">
+        <table class="type-scale-table">
+          <thead>
+            <tr>
+              <th>Element</th>
+              <th>Preview</th>
+              <th>Size</th>
+              <th>Weight</th>
+              <th>Font</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>h1 — Hero</code></td>
+              <td class="preview"
+                style="font-family:var(--font-display); font-size:2.4rem; font-weight:700; line-height:1.1;">Headline
+              </td>
+              <td style="font-size:.82rem;">clamp(2.8rem, 6.5vw, 5.5rem)</td>
+              <td style="font-size:.82rem;">700</td>
+              <td style="font-size:.82rem;">Display</td>
+            </tr>
+            <tr>
+              <td><code>h2 — Section</code></td>
+              <td class="preview"
+                style="font-family:var(--font-display); font-size:1.8rem; font-weight:700; line-height:1.15;">Section
+                Heading</td>
+              <td style="font-size:.82rem;">clamp(2rem, 4vw, 3rem)</td>
+              <td style="font-size:.82rem;">700</td>
+              <td style="font-size:.82rem;">Display</td>
+            </tr>
+            <tr>
+              <td><code>h5 — Card</code></td>
+              <td class="preview" style="font-family:var(--font-display); font-size:1.15rem; font-weight:700;">Card
+                Title</td>
+              <td style="font-size:.82rem;">1.2rem</td>
+              <td style="font-size:.82rem;">700</td>
+              <td style="font-size:.82rem;">Display</td>
+            </tr>
+            <tr>
+              <td><code>Kicker</code></td>
+              <td class="preview"
+                style="font-size:.78rem; font-weight:600; letter-spacing:.25em; text-transform:uppercase; color:var(--clr-accent);">
+                SECTION KICKER</td>
+              <td style="font-size:.82rem;">0.75–0.78rem</td>
+              <td style="font-size:.82rem;">600</td>
+              <td style="font-size:.82rem;">Body</td>
+            </tr>
+            <tr>
+              <td><code>Body</code></td>
+              <td class="preview" style="font-size:1rem; color:var(--clr-text-muted);">Body paragraph text</td>
+              <td style="font-size:.82rem;">0.92–1.15rem</td>
+              <td style="font-size:.82rem;">400</td>
+              <td style="font-size:.82rem;">Body</td>
+            </tr>
+            <tr>
+              <td><code>Nav Link</code></td>
+              <td class="preview"
+                style="font-size:.85rem; font-weight:500; letter-spacing:.04em; text-transform:uppercase; color:var(--clr-text-muted);">
+                NAV LINK</td>
+              <td style="font-size:.82rem;">0.9rem</td>
+              <td style="font-size:.82rem;">500</td>
+              <td style="font-size:.82rem;">Body</td>
+            </tr>
+            <tr>
+              <td><code>Stat Number</code></td>
+              <td class="preview"
+                style="font-family:var(--font-display); font-size:2rem; font-weight:700; color:var(--clr-accent);">120+
+              </td>
+              <td style="font-size:.82rem;">clamp(2.2rem, 4vw, 3rem)</td>
+              <td style="font-size:.82rem;">700</td>
+              <td style="font-size:.82rem;">Display</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- 03 — SPACING                           -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="guide-section">
+      <span class="section-number">03</span>
+      <h2 class="section-title">Spacing System</h2>
+      <p class="section-desc">Consistent spacing creates rhythm. The landing page uses these primary values for section
+        padding, card interiors, and grid gaps.</p>
+
+      <div style="max-width: 500px;">
+        <div class="spacing-row">
+          <div class="spacing-block" style="width:16px; height:16px;"></div>
+          <div><span class="spacing-label">XS</span><br><span class="spacing-value">0.5rem / 8px</span></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-block" style="width:24px; height:24px;"></div>
+          <div><span class="spacing-label">SM</span><br><span class="spacing-value">1rem / 16px — Card internal
+              gaps</span></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-block" style="width:40px; height:40px;"></div>
+          <div><span class="spacing-label">MD</span><br><span class="spacing-value">1.5rem / 24px — Bootstrap g-4
+              gutter</span></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-block" style="width:56px; height:56px;"></div>
+          <div><span class="spacing-label">LG</span><br><span class="spacing-value">2.5rem / 40px — CTA margin, hero
+              actions gap</span></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-block" style="width:80px; height:80px;"></div>
+          <div><span class="spacing-label">XL</span><br><span class="spacing-value">4.5rem / 72px — Section padding
+              (mobile)</span></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-block" style="width:110px; height:110px;"></div>
+          <div><span class="spacing-label">2XL</span><br><span class="spacing-value">6.5rem / 104px — Section padding
+              (desktop)</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- 04 — COMPONENTS                        -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="guide-section">
+      <span class="section-number">04</span>
+      <h2 class="section-title">Components</h2>
+      <p class="section-desc">Reusable UI elements that compose the landing page. All components use CSS variables for
+        consistent theming.</p>
+
+      <!-- Buttons -->
+      <div class="component-card">
+        <div class="component-label">Buttons</div>
+        <div class="d-flex flex-wrap align-items-center gap-3">
+          <button class="btn-primary-custom">Primary CTA</button>
+          <button class="btn-outline-custom">Secondary CTA</button>
+          <button class="btn-nav-custom">Nav CTA</button>
+        </div>
+        <div style="margin-top:1.2rem; font-size:.82rem; color:var(--clr-text-muted); line-height:1.6;">
+          Border-radius: <strong style="color:var(--clr-text);">2px</strong> &nbsp;·&nbsp;
+          Text: <strong style="color:var(--clr-text);">uppercase, letter-spacing .05–.06em</strong> &nbsp;·&nbsp;
+          Hover: <strong style="color:var(--clr-text);">translateY(-2px) + glow shadow</strong>
+        </div>
+      </div>
+
+      <!-- Nav Links -->
+      <div class="component-card">
+        <div class="component-label">Navigation Links</div>
+        <div class="d-flex flex-wrap align-items-center gap-1">
+          <a href="#" class="nav-link-preview active">Home</a>
+          <a href="#" class="nav-link-preview">Services</a>
+          <a href="#" class="nav-link-preview">Work</a>
+          <a href="#" class="nav-link-preview">Clients</a>
+          <a href="#" class="nav-link-preview">Contact</a>
+        </div>
+        <div style="margin-top:1rem; font-size:.82rem; color:var(--clr-text-muted);">
+          Default: <strong style="color:var(--clr-text);">muted text</strong> &nbsp;·&nbsp;
+          Active/Hover: <strong style="color:var(--clr-accent);">accent gold</strong> &nbsp;·&nbsp;
+          Transition: <strong style="color:var(--clr-text);">.25s ease</strong>
+        </div>
+      </div>
+
+      <!-- Feature Card -->
+      <div class="component-card">
+        <div class="component-label">Feature Card</div>
+        <div class="preview-feature-card">
+          <div class="preview-icon"><i class="bi bi-palette2"></i></div>
+          <h5>Feature Title</h5>
+          <p>Short description of the feature or service. Keep it to 2–3 lines for visual balance across the row.</p>
+        </div>
+        <div style="margin-top:1rem; font-size:.82rem; color:var(--clr-text-muted);">
+          Padding: <strong style="color:var(--clr-text);">2.4rem × 2rem</strong> &nbsp;·&nbsp;
+          Hover: <strong style="color:var(--clr-text);">gold border + translateY(-4px)</strong> &nbsp;·&nbsp;
+          Icon box: <strong style="color:var(--clr-text);">52px, 8% gold bg</strong>
+        </div>
+      </div>
+
+      <!-- Testimonial Card -->
+      <div class="component-card">
+        <div class="component-label">Testimonial Card</div>
+        <div class="preview-testimonial">
+          <div class="stars"><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+              class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i></div>
+          <blockquote>"They transformed our entire brand presence. The attention to detail was extraordinary."
+          </blockquote>
+          <div class="d-flex align-items-center gap-2">
+            <div class="preview-avatar">AK</div>
+            <div>
+              <div style="font-weight:600; font-size:.85rem;">Anna Kim</div>
+              <div style="font-size:.75rem; color:var(--clr-text-muted);">CEO, Meridian Labs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Icons -->
+      <div class="component-card">
+        <div class="component-label">Icons — Bootstrap Icons</div>
+        <div class="icon-grid">
+          <div class="icon-tile"><i class="bi bi-palette2"></i><span>palette</span></div>
+          <div class="icon-tile"><i class="bi bi-phone"></i><span>phone</span></div>
+          <div class="icon-tile"><i class="bi bi-camera-reels"></i><span>camera</span></div>
+          <div class="icon-tile"><i class="bi bi-layers"></i><span>layers</span></div>
+          <div class="icon-tile"><i class="bi bi-grid-3x3-gap"></i><span>grid</span></div>
+          <div class="icon-tile"><i class="bi bi-window-desktop"></i><span>window</span></div>
+          <div class="icon-tile"><i class="bi bi-star-fill"></i><span>star</span></div>
+          <div class="icon-tile"><i class="bi bi-twitter-x"></i><span>twitter</span></div>
+        </div>
+        <div style="margin-top:1rem; font-size:.82rem; color:var(--clr-text-muted);">
+          Library: <strong style="color:var(--clr-text);">Bootstrap Icons 1.11</strong> &nbsp;·&nbsp;
+          Color: <strong style="color:var(--clr-accent);">#C9A96E accent</strong> &nbsp;·&nbsp;
+          Size: <strong style="color:var(--clr-text);">1.2–1.35rem in cards, 4rem hero</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- 05 — LAYOUT & GRID                    -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="guide-section">
+      <span class="section-number">05</span>
+      <h2 class="section-title">Layout & Grid</h2>
+      <p class="section-desc">Built on Bootstrap 5's 12-column grid with a standard container. All major sections use
+        one of four column configurations.</p>
+
+      <p class="subkicker">Grid Configurations Used</p>
+
+      <div style="margin-bottom:1.5rem;">
+        <div style="font-size:.85rem; font-weight:600; margin-bottom:.5rem;">Hero — 6 + 5 (offset 1)</div>
+        <div class="row g-2">
+          <div class="col-6">
+            <div class="grid-demo-col">col-lg-6 · Content</div>
+          </div>
+          <div class="col-1">
+            <div class="grid-demo-col" style="opacity:.4;">gap</div>
+          </div>
+          <div class="col-5">
+            <div class="grid-demo-col">col-lg-5 · Visual</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:1.5rem;">
+        <div style="font-size:.85rem; font-weight:600; margin-bottom:.5rem;">Features / Testimonials — 3 Equal Columns
+        </div>
+        <div class="row g-2">
+          <div class="col-4">
+            <div class="grid-demo-col">col-md-4</div>
+          </div>
+          <div class="col-4">
+            <div class="grid-demo-col">col-md-4</div>
+          </div>
+          <div class="col-4">
+            <div class="grid-demo-col">col-md-4</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:1.5rem;">
+        <div style="font-size:.85rem; font-weight:600; margin-bottom:.5rem;">Showcase — 2 Equal Columns</div>
+        <div class="row g-2">
+          <div class="col-6">
+            <div class="grid-demo-col">col-md-6</div>
+          </div>
+          <div class="col-6">
+            <div class="grid-demo-col">col-md-6</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:1.5rem;">
+        <div style="font-size:.85rem; font-weight:600; margin-bottom:.5rem;">Stats — 4 Equal Columns</div>
+        <div class="row g-2">
+          <div class="col-3">
+            <div class="grid-demo-col">col-md-3</div>
+          </div>
+          <div class="col-3">
+            <div class="grid-demo-col">col-md-3</div>
+          </div>
+          <div class="col-3">
+            <div class="grid-demo-col">col-md-3</div>
+          </div>
+          <div class="col-3">
+            <div class="grid-demo-col">col-md-3</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:.85rem; font-weight:600; margin-bottom:.5rem;">Footer — 4 + 2 + 2 + 2 + 2</div>
+        <div class="row g-2">
+          <div class="col-4">
+            <div class="grid-demo-col">col-lg-4 · Brand</div>
+          </div>
+          <div class="col-2">
+            <div class="grid-demo-col">col-lg-2</div>
+          </div>
+          <div class="col-2">
+            <div class="grid-demo-col">col-lg-2</div>
+          </div>
+          <div class="col-2">
+            <div class="grid-demo-col">col-lg-2</div>
+          </div>
+          <div class="col-2">
+            <div class="grid-demo-col">col-lg-2</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- 06 — EFFECTS & MOTION                 -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="guide-section">
+      <span class="section-number">06</span>
+      <h2 class="section-title">Effects & Motion</h2>
+      <p class="section-desc">Subtle motion and atmosphere layers that elevate the experience without overwhelming it.
+      </p>
+
+      <div class="component-card">
+        <div class="component-label">Animations</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; font-size:.88rem;">
+          <div>
+            <div style="font-weight:600; margin-bottom:.3rem;">fadeUp</div>
+            <div style="color:var(--clr-text-muted); font-size:.82rem;">Hero content entrance. Staggered delays: .3s →
+              .5s → .7s → .9s. Translate Y 28px → 0.</div>
+          </div>
+          <div>
+            <div style="font-weight:600; margin-bottom:.3rem;">fadeIn</div>
+            <div style="color:var(--clr-text-muted); font-size:.82rem;">Hero visual block. 1.2s duration, .6s delay.
+              Opacity only.</div>
+          </div>
+          <div>
+            <div style="font-weight:600; margin-bottom:.3rem;">float</div>
+            <div style="color:var(--clr-text-muted); font-size:.82rem;">Badge hover animation. 4s infinite ease-in-out.
+              TranslateY ±8px.</div>
+          </div>
+          <div>
+            <div style="font-weight:600; margin-bottom:.3rem;">Transitions</div>
+            <div style="color:var(--clr-text-muted); font-size:.82rem;">All interactive elements: .25s–.3s ease.
+              Buttons, cards, nav links.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-card">
+        <div class="component-label">Background Effects</div>
+        <div style="font-size:.88rem; color:var(--clr-text-muted); line-height:1.7;">
+          <strong style="color:var(--clr-text);">Navbar:</strong> Backdrop blur (18px) with 85% opacity background.
+          &nbsp;·&nbsp;
+          <strong style="color:var(--clr-text);">Hero:</strong> Two radial gradients at 8% and 5% gold opacity.
+          &nbsp;·&nbsp;
+          <strong style="color:var(--clr-text);">CTA Section:</strong> Centered radial gradient at 7% gold.
+          &nbsp;·&nbsp;
+          <strong style="color:var(--clr-text);">Cards:</strong> 135° linear gradient overlay at 6% gold.
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- 07 — DO / DON'T                       -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="guide-section">
+      <span class="section-number">07</span>
+      <h2 class="section-title">Do's & Don'ts</h2>
+      <p class="section-desc">Guidelines for maintaining visual consistency when extending or modifying the design.</p>
+
+      <div class="do-dont">
+        <div class="do-box">
+          <div class="tag">✓ Do</div>
+          <p>Use Playfair Display for all headings, DM Sans for all body text.</p>
+          <p>Keep border-radius at 2–4px for the sharp, editorial feel.</p>
+          <p>Use gold (#C9A96E) sparingly — kickers, icons, hover states, and accents only.</p>
+          <p>Maintain generous section padding (6.5rem desktop, 4.5rem mobile).</p>
+          <p>Use uppercase + wide letter-spacing for small labels and CTAs.</p>
+        </div>
+        <div class="dont-box">
+          <div class="tag">✗ Don't</div>
+          <p>Use rounded corners above 6px — it conflicts with the editorial tone.</p>
+          <p>Introduce bright or saturated colors beyond the defined palette.</p>
+          <p>Use more than two font families; the pair is intentionally minimal.</p>
+          <p>Apply gold as a background fill for large areas — it's an accent, not a surface.</p>
+          <p>Add heavy drop shadows; prefer subtle border + translateY on hover.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div style="text-align:center; padding:2.5rem 0; border-top:1px solid var(--clr-border); margin-top:0;">
+    <span style="font-family:var(--font-display); font-size:1.1rem; color:var(--clr-accent);">Lumière.</span>
+    <span style="font-size:.8rem; color:var(--clr-text-muted); margin-left:.8rem;">Style Guide v1.0 — Feb 2026</span>
+  </div>
+
+</body>
+
+</html>

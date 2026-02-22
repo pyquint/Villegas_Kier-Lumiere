@@ -11,7 +11,6 @@
     rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
     rel="stylesheet">
-
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -22,7 +21,6 @@
     <div class="container d-flex align-items-center justify-content-between">
       <div class="d-flex">
         <div class="logo">Lumière<span style="color: var(--clr-text);">.</span></div>
-
       </div>
       <div class="d-flex gap-3">
         <div class="d-none d-md-flex align-items-center">
@@ -34,9 +32,9 @@
         </div>
         <button class="btn-nav">GET STARTED</button>
       </div>
-
     </div>
   </nav>
+
 
   <!-- ═══ HERO ═══ -->
   <section id="hero">
@@ -53,20 +51,24 @@
               We craft immersive brand experiences, striking interfaces, and visual identities that leave a lasting
               impression.
             </p>
-            <div class="d-flex gap-3 mt-4">
-              <button class="btn-primary">View Our Work</button>
+            <div class="hero-btns d-flex gap-3 mt-4">
+              <a href="#showcase" class="btn-primary">View Our Work</a>
               <button class="btn-secondary">Learn More</button>
             </div>
           </div>
         </div>
         <div class="col-lg-5 offset-lg-1">
-          <div class="box box-gradient hero-img">
-            <div class="icon icon-muted">
-              <i class="bi bi-layers"></i>
+          <div class="hero-visual">
+            <div class="box box-gradient hero-img">
+              <div class="icon icon-muted">
+                <i class="bi bi-layers"></i>
+              </div>
             </div>
-            <div id="avail-status" class="box">
-              <i class="pip bi bi-circle-fill text-success"></i>
-              Available for projects
+            <div class="float">
+              <div id="avail-status" class="box">
+                <i class="pip bi bi-circle-fill text-success"></i>
+                Available for projects
+              </div>
             </div>
           </div>
         </div>
@@ -86,7 +88,7 @@
       </p>
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="box feature-card">
+          <div class="box box-hover feature-card">
             <div class="icon icon-bg"><i class="bi bi-palette2"></i></div>
             <h5>Brand Identity</h5>
             <p>Comprehensive visual systems - from logos and typography to color palettes and brand
@@ -94,7 +96,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="box feature-card">
+          <div class="box box-hover feature-card">
             <div class="icon icon-bg"><span><i class="bi bi-phone"></i></span></i></div>
             <h5>Digital Product</h5>
             <p>End-to-end UI/UX design and development for web and movile apps that users love and
@@ -102,7 +104,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="box feature-card">
+          <div class="box box-hover feature-card">
             <div class="icon icon-bg"><i class="bi bi-camera-reels"></i></div>
             <h5>Motion and Media</h5>
             <p>Dynamic motion graphics, video production, and interactive media that captivates audiences and amplify
@@ -121,7 +123,7 @@
       <h2 class="section-header">Projects we're proud of</h2>
       <div class="row g-4 mt-2">
         <div class="col-md-6">
-          <div class="box box-gradient d-flex flex-column align-items-start justify-content-end p-4">
+          <div class="box box-gradient box-hover d-flex flex-column align-items-start justify-content-end p-4">
             <div class="icon icon-muted">
               <i class="bi bi-grid-3x3-gap"></i>
             </div>
@@ -130,7 +132,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="box box-gradient d-flex flex-column align-items-start justify-content-end p-4">
+          <div class="box box-gradient box-hover d-flex flex-column align-items-start justify-content-end p-4">
             <div class="icon icon-muted">
               <i class="bi bi-window-desktop"></i>
             </div>
@@ -141,6 +143,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- ═══ STATS — 4 COL ═══ -->
   <section id="stats">
@@ -174,6 +177,7 @@
     </div>
   </section>
 
+
   <!-- ═══ TESTIMONIALS — 3 COL ═══ -->
   <section id="testimonials">
     <div class="container">
@@ -204,7 +208,6 @@
             <div class="d-flex align-items-center gap-2">
               <div class="avatar-circle preview-avatar">MR</p>
               </div>
-
               <div>
                 <div class="author-name">Marco Reyes</div>
                 <div class="author-role">Head of Growth, Solstice</div>
@@ -235,7 +238,7 @@
   <!-- ═══ CTA ═══ -->
   <section id="cta">
     <div class="container">
-      <div style="max-width:520px; margin:0 auto;">
+      <div class="cta-content">
         <p class="kicker">START A PROJECT</p>
         <h2 class="section-header">Let's create something remarkable together</h2>
         <p class="section-body">Have an idea, challenge or a vision? We'd love to hear about it Reach out and
@@ -253,54 +256,64 @@
   <!-- ═══ FOOTER ═══ -->
   <footer>
     <div class="container">
-      <div class="row g-4 mt-1">
-        <div class="col-lg-4">
-          <div class="logo">Lumière.</div>
-          <div class="section-body">
-            <p>A creative studio dedicated to crafting thoughtful brand experiences and digital products.</p>
+      <div class="footer-link-block">
+        <div class="row g-4 mt-1">
+          <div class="col-lg-4">
+            <div class="logo">Lumière.</div>
+            <div class="section-body">
+              <p>A creative studio dedicated to crafting thoughtful brand experiences and digital products.</p>
+            </div>
           </div>
-        </div>
-        <div class="col-6 col-lg-2">
-          <div class="footer-col-title">Studio</div>
-          <a href="#" class="footer-link">About</a>
-          <a href="#" class="footer-link">Careers</a>
-          <a href="#" class="footer-link">Process</a>
-          <a href="#" class="footer-link">Journal</a>
-        </div>
-        <div class="col-6 col-lg-2">
-          <div class="footer-col-title">Services</div>
-          <a href="#" class="footer-link">Branding</a>
-          <a href="#" class="footer-link">Product</a>
-          <a href="#" class="footer-link">Motion</a>
-          <a href="#" class="footer-link">Strategy</a>
-        </div>
-        <div class="col-6 col-lg-2">
-          <div class="footer-col-title">Resources</div>
-          <a href="#" class="footer-link">Case Studies</a>
-          <a href="#" class="footer-link">FAQ</a>
-          <a href="#" class="footer-link">Privacy</a>
-          <a href="#" class="footer-link">Terms</a>
-        </div>
-        <div class="col-6 col-lg-2">
-          <div class="footer-col-title">Connect</div>
-          <a href="#" class="footer-link">Twitter / X</a>
-          <a href="#" class="footer-link">Instagram</a>
-          <a href="#" class="footer-link">Dribbble</a>
-          <a href="#" class="footer-link">LinkedIn</a>
+          <div class="col-6 col-lg-2">
+            <div class="footer-col-title">Studio</div>
+            <a href="#" class="footer-link">About</a>
+            <a href="#" class="footer-link">Careers</a>
+            <a href="#" class="footer-link">Process</a>
+            <a href="#" class="footer-link">Journal</a>
+          </div>
+          <div class="col-6 col-lg-2">
+            <div class="footer-col-title">Services</div>
+            <a href="#" class="footer-link">Branding</a>
+            <a href="#" class="footer-link">Product</a>
+            <a href="#" class="footer-link">Motion</a>
+            <a href="#" class="footer-link">Strategy</a>
+          </div>
+          <div class="col-6 col-lg-2">
+            <div class="footer-col-title">Resources</div>
+            <a href="#" class="footer-link">Case Studies</a>
+            <a href="#" class="footer-link">FAQ</a>
+            <a href="#" class="footer-link">Privacy</a>
+            <a href="#" class="footer-link">Terms</a>
+          </div>
+          <div class="col-6 col-lg-2">
+            <div class="footer-col-title">Connect</div>
+            <a href="#" class="footer-link">Twitter / X</a>
+            <a href="#" class="footer-link">Instagram</a>
+            <a href="#" class="footer-link">Dribbble</a>
+            <a href="#" class="footer-link">LinkedIn</a>
+          </div>
         </div>
       </div>
       <div class="footer-bottom-bar d-flex justify-content-between flex-wrap gap-2 align-items-center">
         <span>© 2025 Lumière Studio. All rights reserved.</span>
         <span class="footer-icons">
-          <i class="bi bi-twitter-x fs-6"></i>
-          <i class="bi bi-instagram fs-6"></i>
-          <i class="bi bi-dribbble fs-6"></i>
-          <i class="bi bi-linkedin fs-6"></i>
+          <a href="https://x.com">
+            <i class="footer-link bi bi-twitter-x fs-6"></i>
+          </a>
+          <a href="https://instagram.com">
+            <i class="footer-link bi bi-instagram fs-6"></i>
+          </a>
+          <a href="https://dribble.com">
+          </a>
+          <a href="https://x.com">
+            <i class="footer-link bi bi-dribbble fs-6"></i>
+          </a>
+          <a href="https://linkedin.com">
+            <i class="footer-link bi bi-linkedin fs-6"></i>
+          </a>
         </span>
       </div>
     </div>
   </footer>
 
 </body>
-
-</html>
